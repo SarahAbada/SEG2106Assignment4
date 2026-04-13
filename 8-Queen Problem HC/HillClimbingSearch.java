@@ -2,7 +2,7 @@
 import java.util.Random;
 
 
-public class HillClimbingSearch {
+public class HillClimbingSearch implements Runnable {
     private int n ;
     private int heuristic = 0;
     private int presentHeuristic;
@@ -114,6 +114,10 @@ public class HillClimbingSearch {
             presentHeuristic  = heuristic;
         }
         finalSolution = presentBoard;
+	}
+
+	public void run(){
+		runSearch();
 	}
 
    
