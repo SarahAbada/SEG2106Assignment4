@@ -24,10 +24,13 @@ public class Main {
 	        long timestamp1 = System.currentTimeMillis();
 	        
 	        System.out.println("Solution to "+ n +" queens using hill climbing search:");
+
+			ThreadGroup threadgroup = new ThreadGroup("HillClimbingSearchThreadGroup");
+		
 	        
-	        HillClimbingSearch hcs = new HillClimbingSearch(n);
+	        //HillClimbingSearch hcs = new HillClimbingSearch(n);
 	        
-	        hcs.runSearch();
+	        //hcs.runSearch();
 	        
 	        if (hcs.getFinalSolution() != null)
 	        	hcs.printState(hcs.getFinalSolution());
