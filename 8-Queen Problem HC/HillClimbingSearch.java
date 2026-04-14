@@ -107,13 +107,15 @@ public class HillClimbingSearch implements Runnable {
     	NQueen[] presentBoard = generateBoard();
         presentHeuristic = findHeuristic(presentBoard);
         // test if the present board is the solution board
-        while (presentHeuristic != 0) {
+        while (presentHeuristic != 0 && !(Thread.currentThread().isInterrupted())) {
             //  Get the next board
            // printState(presentBoard);
             presentBoard = nextBoard(presentBoard);
             presentHeuristic  = heuristic;
         }
-        finalSolution = presentBoard;
+		if (presentHeuristic == 0) {
+    		finalSolution = presentBoard;
+		}
 	}
 
 	public void run(){
